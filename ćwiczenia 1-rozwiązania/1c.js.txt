@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+
+
+
+
+<script> 
+
+  var liczby_pierwsze = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+  
+  
+ document.write(liczby_pierwsze);
+
+</script> 
+
+
+
+</body>
+</html>	

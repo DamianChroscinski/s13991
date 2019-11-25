@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+
+
+
+
+<script> 
+
+  
+    
+var age = prompt("Podaj wiek");
+		if(age>=18)
+		document.write("Jestes pełnoletni <br />");
+		if(age<18)
+		document.write("Nie jesteś pełnoletni <br />");
+</script> 
+
+</body>
+</html>	
