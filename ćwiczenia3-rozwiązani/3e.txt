@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+
+
+ 
+ <script>
+ 
+ function pokazStudent() {
+   var result = "<b>Imie</b>: "+student.imie+"<br>"+"<b>Nazwisko</b>: "+student.nazwisko+"<br>"+"<b>Indeks</b>: "+student.oceny+"<br>"+"<b>oceny</b>: "+student.indeks+"<br>";
+   document.write(result);
+
+}
+
+function student(imie,nazwisko,oceny,indeks){
+this.imie=imie;
+this.nazwisko=nazwisko;
+this.indeks=oceny;
+this.oceny=indeks;
+this.pokazStudent = pokazStudent;
+
+}
+student=new student("Damian ","Student","2,2,2,4","s13991");
+
+
+   student.pokazStudent()
+</script>
+
+
+</body>
+</html>	

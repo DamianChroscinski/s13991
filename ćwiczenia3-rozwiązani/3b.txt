@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+<p>Wpisz dowolny wyraz i wciśnij "Sprawdź".</p>
+
+<form method="get">    
+ 
+        <p><input type="text" id="wyraz" style="width:200px;"/></p>  
+ 
+        <p> <input type="text" id="wynik" readonly="readonly" style="border:0; background-color:white; font-family: verdana; font-weight: bold; width:300px;"/></p>  
+ 
+    <p><input  class="button" type="button" value="Sprawdź" onclick="palindrom()"/>   
+    <input class="button" type="reset" value="Reset" /></p>  
+ </form>
+ 
+ 
+ <script>
+
+
+function palindrom(){
+  var wyraz=document.getElementById("wyraz").value;  
+  wyraz=wyraz.toUpperCase();   
+  var sprawdz=true;            
+  var dlugosc=wyraz.length;    
+
+if (dlugosc==0)               
+ document.getElementById("wynik").value="Nic nie wpisałeś!";  
+ 
+else {
+for (var i=0; i<dlugosc; i++ ) // (7)
+  {
+        if (wyraz.charAt(i)!=wyraz.charAt(dlugosc-i-1))  
+  sprawdz=false;
+  }
+
+if (sprawdz==true) 
+  document.getElementById("wynik").value="Podany wyraz to palindrom."; 
+else
+  document.getElementById("wynik").value="Podany wyraz nie jest palindromem."; 
+}
+}
+</script>
+
+
+</body>
+</html>	

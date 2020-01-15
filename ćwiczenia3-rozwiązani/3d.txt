@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+
+
+ 
+ <script>
+
+
+var array = [ 3, 33, 15, 143, 100, 9, 52, 74, 8, 9 ];
+  
+function znajdzDrugaNajwieksza( array ) {
+    return array.sort(function( a, b ){
+        return b-a;
+    })[ 1 ];
+}
+   
+document.write( znajdzDrugaNajwieksza( array ) );
+</script>
+
+
+</body>
+</html>	
