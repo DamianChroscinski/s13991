@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+
+<form action="fallback.php" method="post">
+    <label><input type="number" name="celcius" step="0.01" /> °C</label> = 
+    <label><input type="number" name="fahrenheit" step="0.01" /> °F</label>
+    
+   
+</form>	
+ 
+ <script>
+ 
+(function(form)
+{
+	var celcius = form.querySelector('[name=celcius]')
+	,fahrenheit = form.querySelector('[name=fahrenheit]')
+	,calculate = function(value, unit)
+	{
+		value = parseInt(value, 10);
+
+		var celcius, fahrenheit;
+
+		switch(unit)
+		{
+			case 'celcius':
+				celcius = value;
+				fahrenheit = (value * 1.8) + 32;
+			break;
+
+			case 'fahrenheit':
+				fahrenheit = value;
+				celcius = ((value - 32) * 5) / 9;
+			break;
+		}
+
+		return {
+			celcius: celcius
+			,fahrenheit: fahrenheit
+		};
+	};
+
+	form.addEventListener('input', function(e)
+	{
+		var target = e.target;
+		
+		if([celcius, fahrenheit].indexOf(target) === -1)
+			return;
+
+		var result = calculate(target.value, target.name);
+
+
+		if(target === celcius)
+			fahrenheit.value = result.fahrenheit.toFixed(2);
+		else
+			celcius.value = result.celcius.toFixed(2);
+		
+	});
+
+	form.querySelector('button[type=submit]').style.display = 'none';
+}(document.querySelector('form')));	
+</script>
+
+
+</body>
+</html>	
