@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page</title>
+</head>
+<body>
+<form name ="textAdding" action="#">	
+		Nowy akapit: <br/>
+		<textarea name="newSection"> </textarea> <br />
+		<input type="button" name="submit" value="Dodaj!" onclick="addText()">
+	</form>
+	<div id="textContent">
+	To poczatek tekstu<br/>
+	</div>
+		<script>
+		function addText(){
+			var existingText = document.getElementById("textContent");
+			var newText = document.createTextNode(document.forms["textAdding"]["newSection"].value);
+			existingText.appendChild(newText);
+			existingText.innerHTML += "<br /><br />";
+		}
+		</script>
+</body>
+</html>	
